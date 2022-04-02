@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import "./App.css";
+import MyHeader from "./MyHeader";
+import MyFooter from "./MyFooter";
+import Counter from "./Counter";
+import Container from "./Container";
 
 function App() {
+  const number = 5;
+  console.log("rendering");
+  const counterProps = {
+    a: 1,
+    b: 2,
+    c: 3,
+    // initialValue: 5,
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <div className="App">
+        <Counter {...counterProps} />
+      </div>
+    </Container>
   );
 }
-
+// ES module system
 export default App;
